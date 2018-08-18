@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="407.0" prefWidth="320" style="-fx-background-color: 0, 100, 100, 0.5;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fileshare.FileShareController">
+    <children>
+        <AnchorPane fx:id="Anch_main" layoutX="-1.0" layoutY="58.0" prefHeight="166.0" prefWidth="322.0" style="-fx-background-color: #2196F3;" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-1.0">
+            <children>
+                <AnchorPane layoutX="1.0" layoutY="97.0" prefHeight="99.0" prefWidth="320.0" style="-fx-background-color: #ECEFF1;" AnchorPane.bottomAnchor="-30.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0">
+                    <children>
+                        <JFXButton fx:id="Send_Flat" focusTraversable="false" layoutX="57.0" layoutY="38.0" onMouseEntered="#Send_Flat_Enter" style="-fx-background-color: #B3E5FC;" text="Send" textFill="#35755d" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="Send_Raised" buttonType="RAISED" focusTraversable="false" layoutX="57.0" layoutY="37.0" onAction="#Send_Raised_Click" onMouseExited="#Send_Raised_Exit" style="-fx-background-color: #B3E5FC;" text="Send" textFill="#35755d" wrapText="true" AnchorPane.leftAnchor="57.0">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="Receive_Raised" buttonType="RAISED" focusTraversable="false" layoutX="204.0" layoutY="37.0" onAction="#Received_Raised_Click" onMouseExited="#Received_Raised_Exit" style="-fx-background-color: #B3E5FC;" text="Receive" textFill="#35755d" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton fx:id="Receive_Flat" focusTraversable="false" layoutX="204.0" layoutY="38.0" onMouseEntered="#Received_Flat_Enter" style="-fx-background-color: #B3E5FC;" text="Receive" textFill="#35755d" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </JFXButton>
+                    </children>
+                </AnchorPane>
+                <Label fx:id="FIle_Share" layoutX="85.5" layoutY="14.0" text="File Share" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="85.5" AnchorPane.rightAnchor="85.5">
+                    <font>
+                        <Font name="Bauhaus 93" size="34.0" />
+                    </font>
+                </Label>
+                <AnchorPane fx:id="Anc_Receiver_ip" layoutX="-9.0" layoutY="64.0" prefHeight="29.0" prefWidth="331.0" style="-fx-background-color: #1E88E5;">
+                    <children>
+                        <Label fx:id="Ip_Label" layoutX="152.0" layoutY="14.0" underline="true" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="81.5" AnchorPane.rightAnchor="81.5" AnchorPane.topAnchor="6.0">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <MaterialDesignIconView fx:id="Setting_Dis" fill="WHITE" glyphName="SETTINGS" layoutX="274.0" layoutY="32.0" onMousePressed="#Setting_Display" size="22" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0" />
+                <MaterialDesignIconView fx:id="Setting_Hi" fill="WHITE" glyphName="SETTINGS" layoutX="268.0" layoutY="30.0" onMousePressed="#Setting_Hide" rotate="-36.9" size="22" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0" />
+                <FontAwesomeIconView fx:id="Close" fill="#39401e" glyphName="CLOSE" onMouseClicked="#Exit" size="18" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="2.0" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="AP_Select" layoutY="259.0" prefHeight="139.0" prefWidth="320.0" style="-fx-background-color: #ECEFF1;">
+            <children>
+                <Label layoutX="25.0" layoutY="2.0" text="Currently we support single type of file transfer" textFill="#37b26a" underline="true" wrapText="true" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+                    <font>
+                        <Font name="Bodoni MT Bold" size="14.0" />
+                    </font>
+                </Label>
+                <JFXRadioButton fx:id="Text" focusTraversable="false" layoutX="23.0" layoutY="26.0" prefHeight="17.0" prefWidth="66.0" text="Text" textFill="#039be5" wrapText="true" AnchorPane.leftAnchor="20.0">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="Select_Type" />
+                    </toggleGroup>
+                </JFXRadioButton>
+                <JFXRadioButton fx:id="Image" focusTraversable="false" layoutX="116.0" layoutY="26.0" text="Image" textFill="#039be5" toggleGroup="$Select_Type" wrapText="true" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="100.0">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </JFXRadioButton>
+                <JFXRadioButton fx:id="Video" focusTraversable="false" layoutX="201.0" layoutY="26.0" text="Video" textFill="#039be5" toggleGroup="$Select_Type" wrapText="true" AnchorPane.rightAnchor="20.0">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </JFXRadioButton>
+                <JFXRadioButton fx:id="Document" focusTraversable="false" layoutX="53.0" layoutY="55.0" text="Document" textFill="#039be5" toggleGroup="$Select_Type" wrapText="true" AnchorPane.leftAnchor="53.0">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </JFXRadioButton>
+                <JFXRadioButton fx:id="Music" focusTraversable="false" layoutX="170.0" layoutY="55.0" text="Music" textFill="#039be5" toggleGroup="$Select_Type" wrapText="true" AnchorPane.rightAnchor="53.0">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </JFXRadioButton>
+                <JFXButton fx:id="Proceed_Raised" buttonType="RAISED" focusTraversable="false" layoutX="114.0" layoutY="84.0" onAction="#Proceed_Raised_Click" onMouseExited="#Proceed_Raised_Exit" style="-fx-background-color: B3E5FC;" text="Proceed" textFill="#35755d" AnchorPane.leftAnchor="113.5" AnchorPane.rightAnchor="113.5">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="Proceed_Flat" focusTraversable="false" layoutX="114.0" layoutY="83.0" onMouseEntered="#Proceed_Flat_Enter" style="-fx-background-color: B3E5FC;" text="Proceed" textFill="#35755d">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="Anch_Setting" layoutY="6.0" prefHeight="48.0" prefWidth="320.0" style="-fx-background-color: #039be5;">
+            <children>
+                <MaterialIconView fx:id="feedback_Black" fill="#e0e0e0" glyphName="FEEDBACK" layoutX="158.0" layoutY="40.0" onMousePressed="#Feed_Black" size="32" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="8.0" />
+                <MaterialIconView fx:id="feedback_White" fill="WHITE" glyphName="FEEDBACK" layoutX="148.0" layoutY="30.0" onMousePressed="#Feed_White" size="32" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="8.0" />
+                <MaterialIconView fx:id="US_Grey" fill="#e0e0e0" glyphName="CONTACTS" layoutX="221.0" layoutY="40.0" onMousePressed="#US_Grey_Hi" size="32" AnchorPane.topAnchor="8.0" />
+                <MaterialIconView fx:id="US_White" fill="WHITE" glyphName="CONTACTS" layoutX="221.0" layoutY="40.0" onMousePressed="#US_White_Dis" size="32" AnchorPane.topAnchor="8.0" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="Anch_feed" layoutY="58.0" prefHeight="120.0" prefWidth="320.0" style="-fx-background-color: #ECEFF1;">
+            <children>
+                <JFXTextField fx:id="Email" focusColor="#039be5" layoutX="62.5" layoutY="43.0" prefHeight="28.0" prefWidth="195.0" promptText="Email Id" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="62.5" AnchorPane.rightAnchor="62.5">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </JFXTextField>
+                <MaterialDesignIconView fill="#039be5" glyphName="ACCOUNT" layoutX="33.0" layoutY="67.0" size="25" />
+                <MaterialDesignIconView fx:id="Star_Half_1" fill="#039be5" glyphName="STAR_OUTLINE" layoutX="74.0" layoutY="120.0" onMousePressed="#Star_1" size="35">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </MaterialDesignIconView>
+                <MaterialDesignIconView fx:id="Star_Half_2" fill="#039be5" glyphName="STAR_OUTLINE" layoutX="105.0" layoutY="120.0" onMousePressed="#Star_2" size="35">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </MaterialDesignIconView>
+                <MaterialDesignIconView fx:id="Star_Half_5" fill="#039be5" glyphName="STAR_OUTLINE" layoutX="198.0" layoutY="120.0" onMousePressed="#Star_5" size="35">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </MaterialDesignIconView>
+                <MaterialDesignIconView fx:id="Star_Half_3" fill="#039be5" glyphName="STAR_OUTLINE" layoutX="136.0" layoutY="120.0" onMousePressed="#Star_3" size="35">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </MaterialDesignIconView>
+                <MaterialDesignIconView fx:id="Star_Half_4" fill="#039be5" glyphName="STAR_OUTLINE" layoutX="167.0" layoutY="120.0" onMousePressed="#Star_4" size="35">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </MaterialDesignIconView>
+                <MaterialDesignIconView fx:id="Star_Full_5" fill="#039be5" glyphName="STAR" layoutX="198.0" layoutY="120.0" onMousePressed="#Star_10" size="35">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </MaterialDesignIconView>
+                <MaterialDesignIconView fx:id="Star_Full_4" fill="#039be5" glyphName="STAR" layoutX="167.0" layoutY="120.0" onMousePressed="#Star_9" size="35">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </MaterialDesignIconView>
+                <MaterialDesignIconView fx:id="Star_Full_3" fill="#039be5" glyphName="STAR" layoutX="136.0" layoutY="121.0" onMousePressed="#Star_8" size="35">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </MaterialDesignIconView>
+                <MaterialDesignIconView fx:id="Star_Full_2" fill="#039be5" glyphName="STAR" layoutX="105.0" layoutY="121.0" onMousePressed="#Star_7" size="35">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </MaterialDesignIconView>
+                <MaterialDesignIconView fx:id="Star_Full_1" fill="#039be5" glyphName="STAR" layoutX="74.0" layoutY="121.0" onMousePressed="#Star_6" size="35">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </MaterialDesignIconView>
+                <Label layoutX="25.5" layoutY="4.0" text="This feature require active Internet Connection" textFill="#37b26a" underline="true" wrapText="true" AnchorPane.leftAnchor="25.5" AnchorPane.rightAnchor="25.5">
+                    <font>
+                        <Font name="Bodoni MT Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="SucFail" layoutX="91.0" layoutY="22.0" textFill="#3add5b" underline="true" wrapText="true" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="91.0">
+                    <font>
+                        <Font name="Bodoni MT Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label fx:id="Rate" layoutX="124.5" layoutY="125.0" textAlignment="CENTER" textFill="#00897b" AnchorPane.leftAnchor="124.5" AnchorPane.rightAnchor="136.5">
+                    <font>
+                        <Font name="Bodoni MT Bold" size="14.0" />
+                    </font>
+                </Label>
+                <MaterialDesignIconView fx:id="Refresh" fill="#1ba442" glyphName="REFRESH" layoutX="283.0" layoutY="116.0" onMousePressed="#refresh" size="22" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="ANCH_SUBmit" layoutY="200.0" prefHeight="106.0" prefWidth="320.0" style="-fx-background-color: #ECEFF1;">
+            <children>
+                <JFXButton fx:id="Submit" layoutX="117.5" layoutY="59.0" onAction="#Submit" style="-fx-background-color: B3E5FC;" text="Submit" textFill="#35755d" AnchorPane.leftAnchor="117.5" AnchorPane.rightAnchor="117.5">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </JFXButton>
+                <JFXTextField fx:id="Text_Feedback" prefHeight="48.0" prefWidth="268.0" unFocusColor="#a47171" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+               
+                </JFXTextField>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
